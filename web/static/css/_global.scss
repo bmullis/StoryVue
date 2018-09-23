@@ -8,15 +8,13 @@ body {
     margin-bottom: 0;
   }
   /* BUTTONS */
-  .btn-primary {
-    background-color: $color_red;
-    border-color: $color_red;
+  .btn-primary, .btn-secondary {
     border-radius: 0;
+    color: $color_white;
     font-weight: 300;
     transition: all .2s;
     &:hover, &:focus {
-      background-color: $color_red - #222;
-      border-color: $color_red - #222;
+      color: $color_white;
     }
   }
   /* FORMS */
