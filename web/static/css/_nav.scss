@@ -3,9 +3,13 @@
   border: none;
   border-radius: 0;
   .navbar-nav {
+    margin-left: 40px;
     li {
       a {
         color: $color_white;
+        font-size: 16px;
+        font-weight: 300;
+        transition: all .2s;
         &:hover, &:focus {
           color: $color_red;
         }
@@ -16,6 +20,7 @@
     background-color: $color_black;
     li {
       a {
+        padding: 12px 20px;
         &:hover {
           background-color: $color_black + #111;
         }
@@ -23,13 +28,16 @@
     }
   }
   .navbar-form {
-    margin: 0 0 0 60px;
+    margin: 0 0 0 40px;
   }
   .form-control {
     background-color: $color_black + #111;
     color: $color_white;
+    font-size: 16px;
+    font-weight: 300;
     margin-right: 0;
-    padding: 25px;
+    padding: 23.5px;
+    transition: all .2s;
   }
   .form-control:active, .form-control:focus {
     background-color: black;
@@ -56,5 +64,5 @@
   color: $color_white;
 }
 .navbar-collapse {
-  padding: 7px 0 !important;
+  padding: 7px 0 5px 0 !important;
 }

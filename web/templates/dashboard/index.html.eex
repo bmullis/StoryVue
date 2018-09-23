@@ -1,3 +1,3 @@
 <div class="container">
-    <h1>Welcome back, <%= current_user(@conn).first_name %>!</h1>
+    <h1>Welcome, <%= current_user(@conn).first_name %>!</h1>
 </div>
