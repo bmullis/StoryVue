@@ -1,8 +1,24 @@
 <div class="container">
-  <h1>Your Stories</h1>
-  <ul>
+  <h1 class="text-center">Your Stories</h1>
+
+  <div class="row">
     <%= for story <- @stories do %>
-      <li><%= story.title %></li>
+      <div class="col-md-4">
+        <div href="#" class="panel panel-default">
+          <div class="panel-heading">
+            <h4><%= story.title %></h4>
+          </div>
+          <div class="panel-body">
+            <p class="list-group-item-text"><%= story.description %></p>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
+    <div class="col-md-12">
+      <div class="fixed-button">
+        <%= link to: story_path(@conn, :new), class: "btn btn-primary btn-round" do %>
+          <i class="material-icons">add</i>
+        <% end %>
+      </div>
+    </div>
 </div>

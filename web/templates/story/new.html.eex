@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-center">Create a New Story</h1>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @changeset, story_path(@conn, :create), fn f -> %>
+        <div class="form-group form-group-lg">
+          <label for="story_title">Title:</label>
+          <%= text_input f, :title, placeholder: "Give your new story a title", class: "form-control" %>
+          <%= error_tag f, :title %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="story_description">Description:</label>
+          <%= textarea f, :description, placeholder: "Give a brief synopsis of your new story. You can always change this later!", class: "form-control" %>
+          <%= error_tag f, :description %>
+        </div>
+
+        <%= hidden_input f, :user_id, value: current_user(@conn).id %>
+
+        <div class="form-group form-group-lg">
+          <%= submit class: "btn btn-lg btn-primary" do %>
+            Create Story
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

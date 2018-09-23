@@ -15,7 +15,6 @@ defmodule Storyvue.Story do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:title, :description, :user_id])
-    |> unique_constraint(:title)
     |> validate_required([:title, :description, :user_id])
   end
 end
