@@ -1,39 +1,43 @@
 <div class="container">
-  <h1>Create an account</h1>
+  <h1 class="text-center">Create an account</h1>
 
-  <%= form_for @changeset, registration_path(@conn, :create), fn f -> %>
-    <%= if f.errors != [] do %>
-      <div class="alert alert-danger">
-        <p>Oops, something went wrong! Please check the errors below:</p>
-      </div>
-    <% end %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @changeset, registration_path(@conn, :create), fn f -> %>
+        <%= if f.errors != [] do %>
+          <div class="alert alert-danger">
+            <p>Oops, something went wrong! Please check the errors below:</p>
+          </div>
+        <% end %>
 
-    <div class="form-group">
-      <label>First Name</label>
-      <%= text_input f, :first_name, class: "form-control" %>
-      <%= error_tag f, :first_name %>
+        <div class="form-group form-group-lg">
+          <label>First Name</label>
+          <%= text_input f, :first_name, class: "form-control" %>
+          <%= error_tag f, :first_name %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label>Last Name</label>
+          <%= text_input f, :last_name, class: "form-control" %>
+          <%= error_tag f, :last_name %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label>Email</label>
+          <%= email_input f, :email, class: "form-control" %>
+          <%= error_tag f, :email %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label>Password</label>
+          <%= password_input f, :password, class: "form-control" %>
+          <%= error_tag f, :password %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <%= submit "Signup", class: "btn btn-lg btn-primary" %>
+        </div>
+      <% end %>
     </div>
-
-    <div class="form-group">
-      <label>Last Name</label>
-      <%= text_input f, :last_name, class: "form-control" %>
-      <%= error_tag f, :last_name %>
-    </div>
-
-    <div class="form-group">
-      <label>Email</label>
-      <%= email_input f, :email, class: "form-control" %>
-      <%= error_tag f, :email %>
-    </div>
-
-    <div class="form-group">
-      <label>Password</label>
-      <%= password_input f, :password, class: "form-control" %>
-      <%= error_tag f, :password %>
-    </div>
-
-    <div class="form-group">
-      <%= submit "Signup", class: "btn btn-primary" %>
-    </div>
-  <% end %>
+  </div>
 </div>
