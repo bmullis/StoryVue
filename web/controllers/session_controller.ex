@@ -22,7 +22,7 @@ defmodule Storyvue.SessionController do
   def delete(conn, _) do
     conn
     |> delete_session(:current_user)
-    |> put_flash(:info, "You were logged out successfully")
+    |> put_flash(:info, "You were successfully logged out")
     |> redirect(to: "/")
   end
 end

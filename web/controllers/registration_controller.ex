@@ -14,11 +14,11 @@ defmodule Storyvue.RegistrationController do
       {:ok, changeset} ->
         conn
         |> put_session(:current_user, changeset.id)
-        |> put_flash(:info, "Your account was created")
-        |> redirect(to: "/")
+        |> put_flash(:info, "Your account was successfully created")
+        |> redirect(to: "/dashboard")
       {:error, changeset} ->
         conn
-        |> put_flash(:info, "Unable to create account")
+        |> put_flash(:info, "We were unable to create your account at this time")
         |> render("new.html", changeset: changeset)
     end
   end

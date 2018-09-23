@@ -25,6 +25,8 @@ defmodule Storyvue.Router do
     delete "/logout", SessionController, :delete
 
     get "/dashboard", DashboardController, :index
+
+    get "/account", AccountController, :index
   end
 
   # Other scopes may use custom stacks.
