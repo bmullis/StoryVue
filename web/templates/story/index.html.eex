@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Your Stories</h1>
+  <ul>
+    <%= for story <- @stories do %>
+      <li><%= story.title %></li>
+    <% end %>
+  </ul>
+</div>

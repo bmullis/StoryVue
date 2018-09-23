@@ -1,3 +1,5 @@
 <div class="container">
     <h1>Welcome, <%= current_user(@conn).first_name %>!</h1>
+
+    <%= link "View Your Stories", to: story_path(@conn, :index) %>
 </div>
