@@ -23,13 +23,10 @@ config :logger, level: :info
 
 # Configure your database
 config :storyvue, Storyvue.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  url: "postgres://djignhpvcarrjg:651b03ec2679597f8e329dd3d0d719eca8dd592ea5c3d927a4d587250ea1cc0e@ec2-174-129-18-98.compute-1.amazonaws.com:5432/das5edu7483lrq",
-  username: "djignhpvcarrjg",
-  password: "651b03ec2679597f8e329dd3d0d719eca8dd592ea5c3d927a4d587250ea1cc0e",
-  database: "das5edu7483lrq",
-  pool_size: 18,
-  ssl: true
+adapter: Ecto.Adapters.Postgres,
+url: System.get_env("DATABASE_URL"),
+pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+ssl: true
 
 # ## SSL Support
 #
