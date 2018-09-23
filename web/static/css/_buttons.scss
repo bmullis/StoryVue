@@ -1,0 +1,14 @@
+.fixed-button {
+  display: block;
+  text-align: right !important;
+}
+.btn-round {
+  border-radius: 500px !important;
+  height: 70px;
+  width: 70px;
+  i {
+    font-size: 30px;
+    padding-top: 12px;
+    text-align: center;
+  }
+}

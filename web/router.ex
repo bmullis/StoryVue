@@ -19,6 +19,7 @@ defmodule Storyvue.Router do
     get "/", PageController, :index
 
     resources "/registration", RegistrationController, only: [:new, :create]
+    resources "/stories", StoryController
 
     get "/login",  SessionController, :new
     post "/login",  SessionController, :create

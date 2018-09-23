@@ -2,6 +2,8 @@ body {
   background-color: $color_white;
   color: #333;
   font-family: $font_family;
+  font-size: 16px;
+  font-weight: 400;
   .navbar-default {
     margin-bottom: 0;
   }
@@ -10,6 +12,7 @@ body {
     background-color: $color_red;
     border-color: $color_red;
     border-radius: 0;
+    font-weight: 300;
     transition: all .2s;
     &:hover, &:focus {
       background-color: $color_red - #222;
