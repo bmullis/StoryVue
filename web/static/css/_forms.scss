@@ -9,3 +9,6 @@ input.form-control, textarea.form-control {
     color: $color_white;
   }
 }
+textarea {
+  height: 150px !important;
+}

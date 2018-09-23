@@ -19,9 +19,10 @@
         <%= hidden_input f, :user_id, value: current_user(@conn).id %>
 
         <div class="form-group form-group-lg">
-          <%= submit class: "btn btn-lg btn-primary" do %>
+          <%= submit class: "btn btn-lg btn-secondary" do %>
             Create Story
           <% end %>
+          <%= link "Cancel", to: story_path(@conn, :index), class: "btn btn-lg btn-primary" %>
         </div>
       <% end %>
     </div>

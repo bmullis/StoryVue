@@ -16,7 +16,7 @@
     <% end %>
     <div class="col-md-12">
       <div class="fixed-button">
-        <%= link to: story_path(@conn, :new), class: "btn btn-primary btn-round" do %>
+        <%= link to: story_path(@conn, :new), class: "btn btn-secondary btn-round" do %>
           <i class="material-icons">add</i>
         <% end %>
       </div>

@@ -2,6 +2,22 @@
   display: block;
   text-align: right !important;
 }
+.btn-primary {
+  background-color: $color_red;
+  border-color: $color_red;
+  &:hover, &:focus {
+    background-color: $color_red - #222;
+    border-color: $color_red - #222;
+  }
+}
+.btn-secondary {
+  background-color: $color_green;
+  border-color: $color_green;
+  &:hover, &:focus {
+    background-color: $color_green - #222;
+    border-color: $color_green - #222;
+  }
+}
 .btn-round {
   border-radius: 500px !important;
   height: 70px;
