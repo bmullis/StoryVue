@@ -1,0 +1,10 @@
+.bread-crumbs {
+  background-color: $color_black + #444;
+  padding: 0.75em;
+  a {
+    color: $color_white;
+    &:hover {
+      color: $color_white - #222;
+    }
+  }
+}

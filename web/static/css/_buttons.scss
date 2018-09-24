@@ -2,6 +2,9 @@
   display: block;
   text-align: right !important;
 }
+.header-button {
+  margin-top: -35px;
+}
 .btn-primary {
   background-color: $color_red;
   border-color: $color_red;
@@ -20,11 +23,21 @@
 }
 .btn-round {
   border-radius: 500px !important;
+  box-shadow: 0 4px 10px rgba(4, 11, 7, 0.25);
   height: 70px;
   width: 70px;
   i {
-    font-size: 30px;
-    padding-top: 12px;
+    font-size: 26px;
+    padding-top: 15px;
     text-align: center;
+  }
+}
+@media screen and (max-width: 760px) {
+  .btn-round {
+    height: 60px;
+    width: 60px;
+    i {
+      font-size: 24px;
+    }
   }
 }
