@@ -47,6 +47,9 @@
                 <li><%= link to: dashboard_path(@conn, :index) do %>
                   <i class="material-icons md-18">dashboard</i>&nbsp; Dashboard <% end %>
                 </li>
+                <li><%= link to: story_path(@conn, :index) do %>
+                  <i class="material-icons md-18">library_books</i>&nbsp; Stories <% end %>
+                </li>
                 <li><%= link to: account_path(@conn, :index) do %>
                   <i class="material-icons md-18">account_box</i>&nbsp; Manage Account <% end %>
                 </li>
