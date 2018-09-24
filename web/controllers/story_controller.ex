@@ -24,6 +24,41 @@ defmodule Storyvue.StoryController do
         |> redirect(to: story_path(conn, :index))
       {:error, changeset} ->
         render conn, "new.html", changeset: changeset
-      end
     end
+  end
+
+  def show(conn, %{"id" => story_id}) do
+    story = Repo.get(Story, story_id)
+    
+    render conn, "show.html", story: story
+  end
+
+  def edit(conn, %{"id" => story_id}) do
+    story = Repo.get(Story, story_id)
+    changeset = Story.changeset(story)
+
+    render conn, "edit.html", changeset: changeset, story: story
+  end
+
+  def update(conn, %{"id" => story_id, "story" => story}) do
+    old_story = Repo.get(Story, story_id)
+    changeset = Story.changeset(old_story, story)
+
+    case Repo.update(changeset) do
+      {:ok, _payment} ->
+        conn
+        |> put_flash(:info, "Your story was successfully updated")
+        |> redirect(to: story_path(conn, :index))
+      {:error, changeset} ->
+        render conn, "edit.html", changeset: changeset, story: old_story
+    end
+  end
+
+  def delete(conn, %{"id" => story_id}) do
+    Repo.get!(Story, story_id) |> Repo.delete!
+
+    conn
+    |> put_flash(:info, "Your story was successfully deleted")
+    |> redirect(to: story_path(conn, :index))
+  end
 end
