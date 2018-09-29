@@ -1,5 +1,5 @@
 body {
-  background-color: $color_white;
+  background-color: $color_gray;
   color: #333;
   font-family: $font_family;
   font-size: 16px;
@@ -15,9 +15,16 @@ body {
     margin-bottom: 0;
   }
   .jumbotron {
+    background: linear-gradient(transparentize($color_green, .3), transparentize($color_green, .5)), url('../images/background2.jpg');
+    background-position: center;
+    background-size: cover;
+    color: $color_white;
     margin-bottom: 0;
     h1 {
-      font-size: 3em;
+      font-size: 2.75em;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
   }
   /* BUTTONS */
@@ -55,4 +62,9 @@ body {
   .material-icons.md-24 { font-size: 24px; }
   .material-icons.md-36 { font-size: 36px; }
   .material-icons.md-48 { font-size: 48px; }
+
+  /* MAIN */
+  main {
+    background-color: transparent;
+  }
 }

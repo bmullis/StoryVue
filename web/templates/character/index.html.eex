@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <div class="container">
-    <h1 class="text-center">Characters in "<%= @story.title %>"</h1>
+    <h1 class="text-center">Characters</h1>
   </div>
 </div>
 
@@ -10,7 +10,6 @@
       <i class="material-icons md-18">arrow_back_ios</i> Back to Story
     <% end %>
   </div>
-
 </div>
 
 <main class="container">
@@ -25,14 +24,16 @@
       <div class="col-md-4">
         <div href="#" class="panel panel-default panel-character">
           <div class="panel-heading">
-            <h4><%= character.char_name %></h4>
+            <h4 class="text-center"><%= character.char_name %></h4>
           </div>
           <div class="panel-body">
             <img src="<%= character.char_image %>" alt="Image of this character">
             <p class="list-group-item-text"><%= character.char_description %></p>
           </div>
           <div class="panel-footer">
-            <%= link "View character", to: story_character_path(@conn, :show, character.id, @story_id), class: "btn btn-md btn-secondary" %>
+            <%= link to: story_character_path(@conn, :show, character.id, @story_id), class: "btn btn-lg btn-secondary" do %>
+              View Character <i class="material-icons">arrow_right</i>
+            <% end %>
           </div>
         </div>
       </div>

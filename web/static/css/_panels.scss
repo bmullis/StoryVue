@@ -1,0 +1,31 @@
+.panel-default {
+  background-color: $color_white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0,12,45,0.15);
+  .panel-heading, .panel-body, .panel-footer {
+    background-color: $color_white;
+    border: none;
+  }
+  .panel-heading {
+    background-color: $color_black + #222;
+    border-radius: 8px 8px 0 0;
+    color: $color_white;
+  }
+  .panel-body {
+    h1 {
+      font-size: 6em;
+      margin: 0;
+    }
+  }
+  .panel-footer {
+    border-radius: 0 0 8px 8px;
+    padding: 0;
+    .btn-lg {
+      display: block;
+      border-radius: 0 0 8px 8px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+}

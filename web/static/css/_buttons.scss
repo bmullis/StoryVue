@@ -6,11 +6,11 @@
   margin-top: -35px;
 }
 .btn-primary {
-  background-color: $color_red;
-  border-color: $color_red;
+  background-color: $color_warning;
+  border-color: $color_warning;
   &:hover, &:focus {
-    background-color: $color_red - #222;
-    border-color: $color_red - #222;
+    background-color: $color_warning - #222;
+    border-color: $color_warning - #222;
   }
 }
 .btn-secondary {
@@ -19,6 +19,14 @@
   &:hover, &:focus {
     background-color: $color_green - #222;
     border-color: $color_green - #222;
+  }
+}
+.btn-danger {
+  background-color: $color_warning;
+  border-color: $color_warning;
+  &:hover, &:focus {
+    background-color: $color_warning - #222;
+    border-color: $color_warning - #222;
   }
 }
 .btn-round {

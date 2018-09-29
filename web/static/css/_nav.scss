@@ -11,7 +11,7 @@
         font-weight: 400;
         transition: all .2s;
         &:hover, &:focus {
-          color: $color_red;
+          color: $color_green;
         }
       }
     }
@@ -42,7 +42,7 @@
   .form-control:active, .form-control:focus {
     background-color: black;
   }
-  .btn-primary {
+  .btn-secondary {
     margin-left: -2px;
     padding: 8.5px 13px;
     i {
@@ -60,7 +60,7 @@
   }
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
-  background-color: $color_red;
+  background-color: $color_green;
   color: $color_white;
 }
 .navbar-collapse {
