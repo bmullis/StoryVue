@@ -14,7 +14,7 @@
 
 <main class="container">
   <div class="fixed-button header-button">
-    <%= link to: dashboard_path(@conn, :index), class: "btn btn-danger btn-round" do %>
+    <%= link to: account_path(@conn, :delete, @user.id), method: :delete, class: "btn btn-danger btn-round" do %>
       <i class="material-icons">delete</i>
     <% end %>
   </div>

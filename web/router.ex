@@ -33,6 +33,7 @@ defmodule Storyvue.Router do
     get "/account", AccountController, :index
     get "/account/:id/edit", AccountController, :edit
     put "/account/:id", AccountController, :update
+    delete "/account/:id", AccountController, :delete
   end
 
   # Other scopes may use custom stacks.

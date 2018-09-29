@@ -17,6 +17,12 @@
       font-size: 6em;
       margin: 0;
     }
+    h3 {
+      font-size: 1.25em;
+    }
+    h3:last-of-type {
+      margin-bottom: 20px;
+    }
   }
   .panel-footer {
     border-radius: 0 0 8px 8px;
