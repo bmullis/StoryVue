@@ -29,8 +29,10 @@ defmodule Storyvue.StoryController do
 
   def show(conn, %{"id" => story_id}) do
     story = Repo.get(Story, story_id)
-    
-    render conn, "show.html", story: story
+    character_query = from c in Storyvue.Character, where: c.story_id == ^story_id
+    characters = Repo.all(character_query)
+
+    render conn, "show.html", story: story, characters: characters
   end
 
   def edit(conn, %{"id" => story_id}) do

@@ -19,14 +19,16 @@ defmodule Storyvue.Router do
     get "/", PageController, :index
 
     resources "/registration", RegistrationController, only: [:new, :create]
-    resources "/stories", StoryController
+
+    resources "/stories", StoryController do
+      resources "/characters", CharacterController
+    end
 
     get "/login",  SessionController, :new
     post "/login",  SessionController, :create
     delete "/logout", SessionController, :delete
 
     get "/dashboard", DashboardController, :index
-
     get "/account", AccountController, :index
   end
 

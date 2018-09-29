@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center"><%= @character.title %></h1>
+  </div>
+</div>
+
+<div class="bread-crumbs">
+  <div class="container">
+    <%= link to: story_character_path(@conn, :index, @story) do %>
+      <i class="material-icons md-18">arrow_back_ios</i> Back to Stories
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="fixed-button header-button">
+    <%= link to: story_character_path(@conn, :edit, @character.id, @story), class: "btn btn-secondary btn-round" do %>
+      <i class="material-icons">edit</i>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2>Description</h2>
+      <p><%= @character.description %></p>
+    </div>
+  </div>
+</div>

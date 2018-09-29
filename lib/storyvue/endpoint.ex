@@ -9,7 +9,10 @@ defmodule Storyvue.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/", from: :storyvue, gzip: false,
+    at: "/uploads", from: Path.expand('./uploads'), gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
+
+
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
