@@ -25,13 +25,15 @@
       <div class="col-md-4">
         <div href="#" class="panel panel-default">
           <div class="panel-heading">
-            <h4><%= story.title %></h4>
+            <h4 class="text-center"><%= story.title %></h4>
           </div>
           <div class="panel-body">
             <p class="list-group-item-text"><%= story.description %></p>
           </div>
           <div class="panel-footer">
-            <%= link "View Story", to: story_path(@conn, :show, story), class: "btn btn-md btn-secondary" %>
+            <%= link to: story_path(@conn, :show, story), class: "btn btn-lg btn-secondary" do %>
+              View Story <i class="material-icons">arrow_right</i>
+            <% end %>
           </div>
         </div>
       </div>

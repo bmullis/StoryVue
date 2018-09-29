@@ -1,3 +1,46 @@
-<div class="container">
-  <h1>User Account</h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center">Manage Account</h1>
+  </div>
 </div>
+
+<div class="bread-crumbs">
+  <div class="container">
+    <%= link to: dashboard_path(@conn, :index) do %>
+      <i class="material-icons md-18">arrow_back_ios</i> Back to Dashboard
+    <% end %>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="fixed-button header-button">
+    <%= link to: dashboard_path(@conn, :index), class: "btn btn-secondary btn-round" do %>
+      <i class="material-icons">edit</i>
+    <% end %>
+  </div>
+</div>
+
+<main class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= for user <- @user do %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>User Information</h4>
+          </div>
+          <div class="panel-body">
+            <h3>Name: <%= user.first_name %> <%= user.last_name %></h3>
+            <h3>Email: <%= user.email %></h3>
+          </div>
+          <div class="panel-footer">
+            <%= link to: account_path(@conn, :edit, user.id), class: "btn btn-lg btn-secondary" do %>
+              Update Information <i class="material-icons">arrow_right</i>
+            <% end %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</main>
