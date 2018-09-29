@@ -28,4 +28,25 @@ defmodule Storyvue.AccountController do
         render conn, "edit.html", changeset: changeset, user: old_user
     end
   end
+
+  def delete(conn, %{"id" => user_id}) do
+    story_query = from s in Storyvue.Story, where: s.user_id == ^user_id
+    stories = Repo.all(story_query)
+      for story <- stories do
+        character_query = from c in Storyvue.Character, where: c.story_id == ^story.id
+        characters = Repo.all(character_query)
+          for character <- characters do
+            Repo.get!(Storyvue.Character, character.id)
+            |> Repo.delete!
+          end
+        Repo.get!(Storyvue.Story, story.id)
+        |> Repo.delete!
+      end
+    Repo.get!(Storyvue.User, user_id)
+    |> Repo.delete!
+
+    conn
+    |> put_flash(:info, "Your Account was successfully deleted")
+    |> redirect(to: page_path(conn, :index))
+  end
 end

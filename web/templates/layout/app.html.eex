@@ -72,14 +72,14 @@
       <%= if get_flash(@conn, :info) do %>
         <div class="alert alert-info" role="alert">
           <div class="container">
-            <%= get_flash(@conn, :info) %>
+            <h4><i class="material-icons">check</i> <%= get_flash(@conn, :info) %></h4>
           </div>
         </div>
       <% end %>
       <%= if get_flash(@conn, :error) do %>
         <div class="alert alert-danger" role="alert">
           <div class="container">
-            <%= get_flash(@conn, :error) %>
+            <h4><i class="material-icons">check</i> <%= get_flash(@conn, :error) %></h4>
           </div>
         </div>
       <% end %>

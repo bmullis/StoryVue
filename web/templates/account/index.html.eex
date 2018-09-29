@@ -15,8 +15,10 @@
 
 <div class="container">
   <div class="fixed-button header-button">
-    <%= link to: dashboard_path(@conn, :index), class: "btn btn-secondary btn-round" do %>
-      <i class="material-icons">edit</i>
+    <%= for user <- @user do %>
+      <%= link to: account_path(@conn, :edit, user.id), class: "btn btn-secondary btn-round" do %>
+        <i class="material-icons">edit</i>
+      <% end %>
     <% end %>
   </div>
 </div>
