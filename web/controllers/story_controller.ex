@@ -50,7 +50,7 @@ defmodule Storyvue.StoryController do
       {:ok, _payment} ->
         conn
         |> put_flash(:info, "Your story was successfully updated")
-        |> redirect(to: story_path(conn, :index))
+        |> redirect(to: story_path(conn, :show, story_id))
       {:error, changeset} ->
         render conn, "edit.html", changeset: changeset, story: old_story
     end
