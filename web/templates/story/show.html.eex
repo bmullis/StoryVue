@@ -25,4 +25,17 @@
       <p><%= @story.description %></p>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2>Characters</h2>
+      <%= for character <- @characters do %>
+        <div class="panel">
+          <p><%= character.char_name %></p>
+        </div>
+      <% end %>
+      <%= link "View All Characters", to: story_character_path(@conn, :index, @story.id), class: "btn btn-secondary btn-lg" %>
+    </div>
+
+  </div>
 </div>

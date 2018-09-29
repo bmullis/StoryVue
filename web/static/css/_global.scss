@@ -16,12 +16,15 @@ body {
   }
   .jumbotron {
     margin-bottom: 0;
+    h1 {
+      font-size: 3em;
+    }
   }
   /* BUTTONS */
   .btn-primary, .btn-secondary {
     border-radius: 0;
     color: $color_white;
-    font-weight: 300;
+    font-weight: 400;
     transition: all .2s;
     &:hover, &:focus {
       color: $color_white;
