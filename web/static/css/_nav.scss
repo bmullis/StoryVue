@@ -66,3 +66,22 @@
 .navbar-collapse {
   padding: 7px 0 5px 0 !important;
 }
+@media screen and (max-width: 767px) {
+  .navbar-default {
+    .navbar-nav {
+      margin-left: 0px;
+      .open {
+        .dropdown-menu>li>a {
+          color: $color_white;
+        }
+      }
+    }
+    .navbar-form {
+      margin: 0px;
+      .form-control {
+        display: inline-block;
+        width: 84%;
+      }
+    }
+  }
+}
