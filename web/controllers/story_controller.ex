@@ -57,6 +57,12 @@ defmodule Storyvue.StoryController do
   end
 
   def delete(conn, %{"id" => story_id}) do
+    character_query = from c in Storyvue.Character, where: c.story_id == ^story_id
+    characters = Repo.all(character_query)
+      for character <- characters do
+        Repo.get!(Storyvue.Character, character.id)
+        |> Repo.delete!
+      end
     Repo.get!(Story, story_id) |> Repo.delete!
 
     conn
