@@ -9,6 +9,7 @@
 .btn-primary {
   background-color: $color_warning;
   border-color: $color_warning;
+  border-radius: 3px;
   &:hover, &:focus {
     background-color: $color_warning - #222;
     border-color: $color_warning - #222;
@@ -17,6 +18,7 @@
 .btn-secondary {
   background-color: $color_green;
   border-color: $color_green;
+  border-radius: 3px;
   &:hover, &:focus {
     background-color: $color_green - #222;
     border-color: $color_green - #222;

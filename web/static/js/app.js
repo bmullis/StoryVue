@@ -17,6 +17,10 @@ $(document).ready(function() {
   setTimeout(function() {
     $('.alert').slideUp();
   }, 2000);
+
+  $('.panel-heading .kebab').on('click', function() {
+    $(this).siblings('.panel-heading-menu').toggleClass('hidden');
+  });
 })
 
 // Import local files

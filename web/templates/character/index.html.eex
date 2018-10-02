@@ -25,10 +25,33 @@
         <div href="#" class="panel panel-default panel-character">
           <div class="panel-heading">
             <h4 class="text-center"><%= character.char_name %></h4>
+            <button type="button" class="kebab" data-toggle="panel-heading-menu">
+              <i class="material-icons">more_vert</i>
+            </button>
+            <div class="panel-heading-menu hidden">
+              <ul>
+                <li>
+                  <a href="#">
+                    <i class="material-icons md-18">label</i> &nbsp;Tags
+                  </a>
+                  <%= link to: story_path(@conn, :index) do %>
+                    <i class="material-icons md-18">settings</i> &nbsp;Settings
+                  <% end %>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="panel-body">
-            <img src="<%= character.char_image %>" alt="Image of this character">
-            <p class="list-group-item-text"><%= character.char_description %></p>
+            <%= if character.char_image do %>
+              <div class="panel-body-image" style="background-image:url('<%= character.char_image %>');"></div>
+            <% else %>
+              <div class="panel-body-image" style="background-image:url('/images/user-image2.jpg');"></div>
+            <% end %>
+            <p><%= character.char_description %></p>
+            <div class="panel-body-badges">
+              <span class="badge">Protoganist</span>
+            </div>
           </div>
           <div class="panel-footer">
             <%= link to: story_character_path(@conn, :show, character.id, @story_id), class: "btn btn-lg btn-secondary" do %>

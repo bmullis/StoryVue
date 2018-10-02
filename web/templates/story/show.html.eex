@@ -30,10 +30,24 @@
     <div class="col-md-6 col-md-offset-3">
       <h2>Characters</h2>
       <%= for character <- @characters do %>
-        <div class="panel">
-          <p><%= character.char_name %></p>
+        <div class="media">
+          <div class="media-left">
+            <%= if character.char_image do %>
+              <div class="media-object" style="background-image:url('<%= character.char_image %>');" />
+            <% else %>
+              <div class="media-object" style="background-image:url('/images/user-image2.jpg');" />
+            <% end %>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading"><%= character.char_name %></h4>
+            <p><%= character.char_description %></p>
+            <%= link to: story_path(@conn, :index), class: "btn btn-sm btn-secondary" do %>
+              View Character
+            <% end %>
+          </div>
         </div>
       <% end %>
+      <br />
       <%= link "View All Characters", to: story_character_path(@conn, :index, @story.id), class: "btn btn-secondary btn-lg" %>
     </div>
 
