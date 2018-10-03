@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="panel-footer">
-            <%= link to: story_character_path(@conn, :show, character.id, @story_id), class: "btn btn-lg btn-secondary" do %>
+            <%= link to: story_character_path(@conn, :show, @story_id, character.id), class: "btn btn-lg btn-secondary" do %>
               View Character <i class="material-icons">arrow_right</i>
             <% end %>
           </div>

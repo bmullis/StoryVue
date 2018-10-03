@@ -88,24 +88,16 @@
   }
 }
 
-.media {
-  .media-left {
-    border-radius: 4px;
-    transition: all .2s;
-    &:hover {
-      background-color: $color_gray + #111;
-    }
-    .media-object {
-      background-position: center;
-      background-size: cover;
-      border-radius: 4px 0 0 4px;
-      float: left;
-      margin-right: 15px;
-      height: 105px;
-      width: 105px;
-    }
-  }
-  .media-heading {
-    margin-top: 10px;
+.media-small {
+  .media-small-img {
+    background-position: center;
+    background-size: cover;
+    border-radius: 500px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    height: 65px;
+    width: 65px;
   }
 }

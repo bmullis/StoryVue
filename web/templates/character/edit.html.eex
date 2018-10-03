@@ -1,28 +1,87 @@
-<div class="container">
-  <h1 class="text-center">Edit <%= @character.title %></h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center">Edit <%= @character.char_name %></h1>
+  </div>
+</div>
 
+<div class="bread-crumbs">
+  <div class="container">
+    <%= link to: story_character_path(@conn, :show, @story_id, @character.id) do %>
+      <i class="material-icons md-18">arrow_back_ios</i> Back to Character
+    <% end %>
+  </div>
+</div>
+
+<main class="container">
+  <div class="fixed-button header-button">
+    <%= link to: story_character_path(@conn, :delete, @story_id, @character.id), method: :delete, class: "btn btn-danger btn-round" do %>
+      <i class="material-icons">delete</i>
+    <% end %>
+  </div>
+
+<div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <%= form_for @changeset, story_character_path(@conn, :update, @character), fn f -> %>
+      <%= form_for @changeset, story_character_path(@conn, :update, @story_id, @character.id), fn f -> %>
         <div class="form-group form-group-lg">
-          <label for="character_title">Title:</label>
-          <%= text_input f, :title, placeholder: "Give your new character a title", class: "form-control" %>
-          <%= error_tag f, :title %>
+          <label for="character_title">Name:</label>
+          <%= text_input f, :char_name, placeholder: "What is this characters name?", class: "form-control" %>
+          <%= error_tag f, :char_name %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="character_title">Upload an Image of your Character:</label>
+          <%= url_input f, :char_image, placeholder: "Add a link to an image of this character", class: "form-control" %>
+          <%= error_tag f, :char_image %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="character_title">Date of Birth:</label>
+          <%= date_input f, :char_date_of_birth, placeholder: "When whas this character born?", class: "form-control" %>
+          <%= error_tag f, :char_date_of_birth %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="character_title">Place of Birth:</label>
+          <%= text_input f, :char_place_of_birth, placeholder: "Where whas this character born?", class: "form-control" %>
+          <%= error_tag f, :char_place_of_birth %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="character_title">Education:</label>
+          <%= select f, :char_education, ["None": "None", "High School": "High School", "Associates Degree": "Associates Degree", "Bachelors Degree": "Bachelors College", "Masters Degree": "Masters Degree", "Phd": "Phd"], class: "form-control" %>
+          <%= error_tag f, :char_education %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="character_title">School Attended:</label>
+          <%= text_input f, :char_school, placeholder: "Which school did this character attend?", class: "form-control" %>
+          <%= error_tag f, :char_school %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="character_title">Occupation:</label>
+          <%= text_input f, :char_occupation, placeholder: "What occupation does this character have?", class: "form-control" %>
+          <%= error_tag f, :char_occupation %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="character_desire">Goals:</label>
+          <%= textarea f, :char_desire, placeholder: "What are your characters desires? What are they trying to acheive/accomplish?", class: "form-control" %>
+          <%= error_tag f, :char_desire %>
         </div>
 
         <div class="form-group form-group-lg">
           <label for="character_description">Description:</label>
-          <%= textarea f, :description, placeholder: "Give a brief synopsis of your new character. You can always change this later!", class: "form-control" %>
-          <%= error_tag f, :description %>
+          <%= textarea f, :char_description, placeholder: "Give a brief description of your new character. This can include appearance, traits, etc.", class: "form-control" %>
+          <%= error_tag f, :char_description %>
         </div>
-
-        <%= hidden_input f, :user_id, value: current_user(@conn).id %>
 
         <div class="form-group form-group-lg">
           <%= submit class: "btn btn-lg btn-secondary" do %>
             Update character
           <% end %>
-          <%= link "Cancel", to: story_character_path(@conn, :show, @character), class: "btn btn-lg btn-primary" %>
+          <%= link "Cancel", to: story_character_path(@conn, :show, @story_id, @character.id), class: "btn btn-lg btn-primary" %>
         </div>
       <% end %>
     </div>

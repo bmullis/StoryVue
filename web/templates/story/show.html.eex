@@ -28,28 +28,20 @@
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h2>Characters</h2>
+      <h3>Characters</h3>
       <%= for character <- @characters do %>
-        <div class="media">
-          <div class="media-left">
+        <div class="media-small">
+          <%= link to: story_character_path(@conn, :show, @story.id, character.id) do %>
             <%= if character.char_image do %>
-              <div class="media-object" style="background-image:url('<%= character.char_image %>');" />
+              <div class="media-small-img" style="background-image:url('<%= character.char_image %>');"></div>
             <% else %>
-              <div class="media-object" style="background-image:url('/images/user-image2.jpg');" />
+              <div class="media-small-img" style="background-image:url('/images/user-image2.jpg');"></div>
             <% end %>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading"><%= character.char_name %></h4>
-            <p><%= character.char_description %></p>
-            <%= link to: story_path(@conn, :index), class: "btn btn-sm btn-secondary" do %>
-              View Character
-            <% end %>
-          </div>
+          <% end %>
         </div>
       <% end %>
       <br />
-      <%= link "View All Characters", to: story_character_path(@conn, :index, @story.id), class: "btn btn-secondary btn-lg" %>
+      <%= link "View All", to: story_character_path(@conn, :index, @story.id), class: "btn btn-secondary btn-md" %>
     </div>
-
   </div>
 </div>
