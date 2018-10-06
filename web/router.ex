@@ -21,7 +21,10 @@ defmodule Storyvue.Router do
     resources "/registration", RegistrationController, only: [:new, :create]
 
     resources "/stories", StoryController do
-      resources "/characters", CharacterController
+      resources "/characters", CharacterController do
+        resources "/tags", CharTagController, only: [:index, :new, :create, :edit, :update, :delete]
+      end
+      resources "/tags", StoryTagController, only: [:index, :new, :create, :edit, :update, :delete]
     end
 
     get "/login",  SessionController, :new
