@@ -21,6 +21,27 @@ $(document).ready(function() {
   $('.panel-heading .kebab').on('click', function() {
     $(this).siblings('.panel-heading-menu').toggleClass('hidden');
   });
+
+  if ($('.badge')) {
+    $('.badge').each(function() {
+      let rgb = $(this).css('backgroundColor');
+      let colors = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+
+      let r = colors[1];
+      let g = colors[2];
+      let b = colors[3];
+
+      let textColor;
+
+      if (Number(colors[1]) + Number(colors[2]) + Number(colors[3]) > 470) {
+        textColor = '#000000';
+      } else {
+        textColor = '#ffffff';
+      }
+
+      $(this).css('color', textColor);
+    });
+  }
 })
 
 // Import local files

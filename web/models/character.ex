@@ -1,5 +1,6 @@
 defmodule Storyvue.Character do
   use Storyvue.Web, :model
+  alias Storyvue.CharTag
 
   schema "characters" do
     field :char_name, :string
@@ -12,6 +13,7 @@ defmodule Storyvue.Character do
     field :char_description, :string
     field :char_desire, :string
     field :story_id, :integer
+    has_many :char_tags, CharTag, foreign_key: :char_id
 
     timestamps()
   end

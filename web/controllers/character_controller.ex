@@ -1,11 +1,15 @@
 defmodule Storyvue.CharacterController do
   use Storyvue.Web, :controller
   alias Storyvue.Character
+  alias Storyvue.CharTag
+  alias Storyvue.Story
 
   def index(conn, %{"story_id" => story_id}) do
-    character_query = character_query = from c in Storyvue.Character, where: c.story_id == ^story_id
+    character_query = from c in Character,
+      where: c.story_id == ^story_id,
+      preload: [:char_tags]
     characters = Repo.all(character_query)
-    story = Repo.get(Storyvue.Story, story_id)
+    story = Repo.get(Story, story_id)
     render conn, "index.html", characters: characters, story_id: story_id, story: story
   end
 

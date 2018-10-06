@@ -32,9 +32,9 @@
             <div class="panel-heading-menu hidden">
               <ul>
                 <li>
-                  <a href="#">
+                  <%= link to: story_story_tag_path(@conn, :index, story.id) do %>
                     <i class="material-icons md-18">label</i> &nbsp;Tags
-                  </a>
+                  <% end %>
                   <%= link to: story_path(@conn, :edit, story.id) do %>
                     <i class="material-icons md-18">settings</i> &nbsp;Settings
                   <% end %>
@@ -47,7 +47,9 @@
             <p class="list-group-item-text"><%= story.description %></p>
           </div>
           <div class="panel-body-badges">
-            <span class="badge">Existentialism</span>
+            <%= for story_tag <- story.story_tags do %>
+              <span class="badge" style="background-color: <%= story_tag.tag_color %>;"><%= story_tag.tag_title %></span>
+            <% end %>
           </div>
           <div class="panel-footer">
             <%= link to: story_path(@conn, :show, story), class: "btn btn-lg btn-secondary" do %>
