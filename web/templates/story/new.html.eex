@@ -1,6 +1,25 @@
-<div class="container">
-  <h1 class="text-center">Create a New Story</h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center">Create a New Story</h1>
+  </div>
+</div>
 
+<div class="bread-crumbs">
+  <div class="container">
+    <%= link to: story_path(@conn, :index) do %>
+      <i class="material-icons md-18">arrow_back_ios</i> Back to Stories
+    <% end %>
+  </div>
+</div>
+
+<main class="container">
+  <div class="fixed-button header-button">
+    <div style="height: 70px;">
+    </div>
+  </div>
+</div>
+
+<main class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= form_for @changeset, story_path(@conn, :create), fn f -> %>
@@ -27,5 +46,4 @@
       <% end %>
     </div>
   </div>
-
-</div>
+</main>

@@ -1,26 +1,37 @@
 .panel-default {
   background-color: $color_white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 0 30px rgba(0,12,45,0.15);
   .panel-heading, .panel-body, .panel-footer {
     background-color: $color_white;
     border: none;
   }
   .panel-heading {
-    background-color: #43434D;
-    border-radius: 8px 8px 0 0;
+    background-color: $color_white;
+    border-radius: 6px 6px 0 0;
     color: $color_white;
+    padding: 30px 30px 0 30px;
     text-transform: capitalize;
+    text-align: center;
+    h4 {
+      color: $color_dark_gray;
+      font-weight: bold;
+      font-size: 20px;
+      margin: 0 0 20px 0;
+      text-align: left;
+      text-transform: uppercase;
+    }
     .kebab {
       background-color: transparent;
       border: none;
+      color: $color_green;
       position: absolute;
-      right: 25px;
-      top: 15px;
+      right: 30px;
+      top: 27px;
       &:hover {
         i {
-          color: $color_white - #222;
+          color: $color_green - #222;
         }
       }
       &:active, &:focus {
@@ -28,12 +39,13 @@
       }
     }
     .panel-heading-menu {
-      background-color: #43434D;
+      background-color: transparentize($color_green, .05);
       border-radius: 0 0 6px 6px;
-      top: 59px;
+      top: 72px;
       padding: 0 0 5px 0;
       position: absolute;
       right: 15px;
+      text-align: left;
       ul {
         margin: 0;
         padding: 0;
@@ -46,8 +58,8 @@
             text-decoration: none;
             transition: all .2s;
             &:hover {
-              background-color: #43434d + #111;
-              color: $color_green;
+              background-color: $color_green - #111;
+              color: $color_white;
             }
           }
         }
@@ -57,8 +69,10 @@
   .panel-body {
     padding: 0;
     p {
-      margin: 0;
-      padding: 15px;
+      border-left: 0 solid $color_green;
+      margin: 0px 30px 20px 30px;
+      padding-left: 0;
+      text-align: left;
     }
     h1 {
       font-size: 6em;
@@ -67,6 +81,7 @@
     }
     h3 {
       font-size: 1.25em;
+      padding: 5px 30px 0 30px;
     }
     h3:last-of-type {
       margin-bottom: 20px;
@@ -75,29 +90,61 @@
       background-position: center;
       background-size: cover;
       height: 250px;
+      margin-bottom: 20px;
     }
   }
+  .panel-body-badges {
+    padding: 0 30px;
+  }
   .panel-footer {
-    border-radius: 0 0 8px 8px;
-    padding: 0;
+    border-radius: 0 0 6px 6px;
+    padding: 30px 30px;
     .btn-lg {
       display: block;
-      border-radius: 0 0 8px 8px;
-      padding-top: 12px;
-      padding-bottom: 12px;
+      border-radius: 6px;
     }
+    .btn-secondary {
+      background-color: $color_white;
+      color: $color_green;
+      &:hover, &:focus, &:active {
+        background-color: $color_green - #222;
+        border-color: $color_green - #222;
+        color: $color_white !important;
+      }
+    }
+  }
+}
+.story-panel {
+  padding: 30px;
+  margin-bottom: 50px;
+  h3 {
+    color: $color_green - #222;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px 0 10px 0;
+    text-transform: uppercase;
+  }
+  h5 {
+    font-size: 16px;
+    font-style: italic;
+  }
+  p {
+    border-left: 3px solid $color_green;
+    padding-left: 20px;
+    text-align: left;
   }
 }
 
 .media-small {
+  display: inline;
+  margin: 7px;
   .media-small-img {
     background-position: center;
     background-size: cover;
     border-radius: 500px;
-    float: left;
-    margin-top: 5px;
-    margin-right: 15px;
-    margin-bottom: 25px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 20px;
     height: 65px;
     width: 65px;
   }

@@ -22,6 +22,10 @@ $(document).ready(function() {
     $(this).siblings('.panel-heading-menu').toggleClass('hidden');
   });
 
+  $('[data-toggle="tooltip"]').tooltip();
+  $('.header-button .btn-secondary').tooltip();
+  $('.header-button .btn-danger').tooltip();
+
   if ($('.badge')) {
     $('.badge').each(function() {
       let rgb = $(this).css('backgroundColor');

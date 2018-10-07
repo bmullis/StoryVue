@@ -14,7 +14,7 @@
 
 <main class="container">
   <div class="fixed-button header-button">
-    <%= link to: story_character_path(@conn, :delete, @story_id, @character.id), method: :delete, class: "btn btn-danger btn-round" do %>
+    <%= link to: story_character_path(@conn, :delete, @story_id, @character.id), method: :delete, class: "btn btn-danger btn-round", title: "Delete this character" do %>
       <i class="material-icons">delete</i>
     <% end %>
   </div>

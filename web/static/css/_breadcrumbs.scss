@@ -3,7 +3,7 @@
   padding: 0.75em;
   a {
     color: $color_white;
-    &:hover {
+    &:hover, &:focus, &:active, &:active:focus {
       color: $color_white - #222;
     }
   }

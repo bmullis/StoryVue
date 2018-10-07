@@ -14,41 +14,51 @@
 
 <div class="container">
   <div class="fixed-button header-button">
-    <%= link to: story_path(@conn, :edit, @story.id), class: "btn btn-secondary btn-round" do %>
+    <%= link to: story_path(@conn, :edit, @story.id), class: "btn btn-secondary btn-round", title: "Edit this story"  do %>
       <i class="material-icons">edit</i>
     <% end %>
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h3>Themes</h3>
-      <p><%= @story.description %></p>
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="panel panel-default story-panel">
+        <h3>Description</h3>
+        <h5>This is the short description of your story.</h5>
+        <p><%= @story.description %></p>
+      </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h3>Characters</h3>
-      <%= for character <- @characters do %>
-        <div class="media-small">
-          <%= link to: story_character_path(@conn, :show, @story.id, character.id) do %>
-            <%= if character.char_image do %>
-              <div class="media-small-img" style="background-image:url('<%= character.char_image %>');"></div>
-            <% else %>
-              <div class="media-small-img" style="background-image:url('/images/user-image2.jpg');"></div>
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="panel panel-default story-panel">
+        <h3>Characters</h3>
+        <h5>These are the characters that appear in your story.</h5>
+        <%= for character <- @characters do %>
+          <div class="media-small">
+            <%= link to: story_character_path(@conn, :show, @story.id, character.id) do %>
+              <%= if character.char_image do %>
+                <div data-toggle="tooltip" title="<%= character.char_name %>" class="media-small-img" style="background-image:url('<%= character.char_image %>');"></div>
+              <% else %>
+                <div data-toggle="tooltip" title="<%= character.char_name %>" class="media-small-img" style="background-image:url('/images/user-image2.jpg');"></div>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-      <% end %>
-      <br />
-      <%= link "View All", to: story_character_path(@conn, :index, @story.id), class: "btn btn-secondary btn-md" %>
+          </div>
+        <% end %>
+        <br />
+        <%= link "View All", to: story_character_path(@conn, :index, @story.id), class: "btn btn-secondary btn-md" %>
+      </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h3>Timeline</h3>
-
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="panel panel-default story-panel">
+        <h3>Timeline</h3>
+        <div class="timeline">
+          Create Moments
+        </div>
+      </div>
     </div>
   </div>
 </div>

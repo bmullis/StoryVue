@@ -16,7 +16,7 @@
 <div class="container">
   <div class="fixed-button header-button">
     <%= for user <- @user do %>
-      <%= link to: account_path(@conn, :edit, user.id), class: "btn btn-secondary btn-round" do %>
+      <%= link to: account_path(@conn, :edit, user.id), class: "btn btn-secondary btn-round", title: "Edit account" do %>
         <i class="material-icons">edit</i>
       <% end %>
     <% end %>

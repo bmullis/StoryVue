@@ -6,7 +6,7 @@ body {
   font-weight: 400;
   a {
     color: $color_red;
-    &:hover {
+    &:hover, &:focus, &:active, :active:focus {
       color: $color_red - #222;
       text-decoration: none;
     }
@@ -15,7 +15,7 @@ body {
     margin-bottom: 0;
   }
   .jumbotron {
-    background: linear-gradient(transparentize($color_green, .3), transparentize($color_green, .5)), url('../images/background2.jpg');
+    background: linear-gradient(transparentize($color_green, .1), transparentize($color_green, .1)), url('../images/background2.jpg');
     background-position: center;
     background-size: cover;
     color: $color_white;
@@ -39,7 +39,6 @@ body {
   /* FORMS */
   .form-control {
     border: none;
-    border-radius: 0;
   }
   /* ALERTS */
   .alert {
@@ -50,7 +49,6 @@ body {
       i {
         background-color: $color_white;
         border-radius: 50%;
-        color: $color_success;
         font-size: 22px;
         font-weight: 600;
         margin-right: 10px;
@@ -62,6 +60,21 @@ body {
     background-color: $color_success;
     border-color: $color_success;
     color: $color_white;
+    h4 {
+      i {
+        color: $color_success;
+      }
+    }
+  }
+  .alert-danger {
+    background-color: $color_warning;
+    border-color: $color_warning;
+    color: $color_white;
+    h4 {
+      i {
+        color: $color_warning;
+      }
+    }
   }
   /* ICONS */
   .material-icons {
@@ -79,7 +92,18 @@ body {
     background-color: transparent;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   /* HELPER CLASSES */
+  .tooltip {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    .tooltip-inner {
+      padding: 8px 20px;
+    }
+  }
   .hidden {
     display: none;
   }
