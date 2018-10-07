@@ -1,5 +1,6 @@
 defmodule Storyvue.CharacterController do
   use Storyvue.Web, :controller
+  use Timex
   alias Storyvue.Character
   alias Storyvue.CharTag
   alias Storyvue.Story
@@ -34,7 +35,10 @@ defmodule Storyvue.CharacterController do
   def show(conn, %{"id" => char_id, "story_id" => story_id}) do
     character = Repo.get(Character, char_id)
 
-    render conn, "show.html", character: character, story_id: story_id
+    character_age = Timex.diff(Timex.today, character.char_date_of_birth, :days) |> div(365)
+
+    IO.inspect(character)
+    render conn, "show.html", character: character, story_id: story_id, char_age: character_age
   end
 
   def edit(conn, %{"id" => character_id, "story_id" => story_id}) do

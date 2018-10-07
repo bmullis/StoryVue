@@ -2,6 +2,20 @@
   background-color: $color_black;
   border: none;
   border-radius: 0;
+  .navbar-toggle {
+    border: none;
+    margin-top: 12px;
+    padding: 0;
+    &:hover, &:active, &:focus {
+      background-color: transparent;
+    }
+    .icon-bar {
+      background-color: $color_white;
+      height: 3px;
+      margin-bottom: 5px;
+      width: 27px;
+    }
+  }
   .navbar-nav {
     margin-left: 40px;
     li {
@@ -31,13 +45,14 @@
     margin: 0 0 0 40px;
     .btn-secondary {
       border-radius: 0 3px 3px 0;
-      border-width: 1px;
+      border-width: 2px;
       margin-left: -3px
     }
   }
   .form-control {
     background-color: $color_black + #111;
     border-radius: 6px 0 0 6px !important;
+    border: 1px solid $color_black + #111;
     color: $color_white;
     font-size: 16px;
     font-weight: 300;
@@ -77,6 +92,17 @@
 }
 @media screen and (max-width: 767px) {
   .navbar-default {
+    .navbar-brand {
+      img {
+        margin-top: -4px;
+      }
+    }
+    .navbar-form {
+      .form-control {
+        border-radius: 6px !important;
+        width: 100% !important;
+      }
+    }
     .navbar-nav {
       margin-left: 0px;
       .open {
@@ -92,5 +118,8 @@
         width: 84%;
       }
     }
+  }
+  .navbar-nav .open .dropdown-menu>li>a {
+    line-height: 35px;
   }
 }

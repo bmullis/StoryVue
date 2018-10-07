@@ -21,22 +21,38 @@
 
   <div class="row">
     <div class="col-md-4">
-      <%= if @character.char_image do %>
-        <div class="character-image" style="background-image:url('<%= @character.char_image %>');"></div>
-      <% else %>
-        <div class="character-image" style="background-image:url('/images/user-image2.jpg');"></div>
-      <% end %>
-    </div>
-    <div class="col-md-6 text-center">
-      <h2>About Your Character</h2>
+      <div class="panel panel-default character-panel">
+        <%= if @character.char_image do %>
+          <div class="character-image" style="background-image:url('<%= @character.char_image %>');"></div>
+        <% else %>
+          <div class="character-image" style="background-image:url('/images/user-image2.jpg');"></div>
+        <% end %>
+        <h3>Description</h3>
+        <h5>This is the description of your character.</h5>
+        <p><%= @character.char_description %></p>
+        <%= if @character.char_place_of_birth do %>
+          <p>Born: <%= @character.char_place_of_birth %></p>
+        <% end %>
+        <%= if @character.char_date_of_birth do %>
+          <p>Age: <%= @char_age %></p>
+        <% end %>
+      </div>
     </div>
     <div class="col-md-4">
-      <h4>Description</h4>
-      <p><%= @character.char_description %></p>
-    </div>
-    <div class="col-md-4">
-      <h4>Desire</h4>
-      <p><%= @character.char_desire %></p>
+      <div class="panel panel-default character-panel">
+        <%= if @character.char_education do %>
+          <h3>Education</h3>
+          <h5>Character's education information.</h5>
+          <p><%= @character.char_education %> from <%= @character.char_school %></p>
+        <% end %>
+      </div>
+      <div class="panel panel-default character-panel">
+        <%= if @character.char_occupation do %>
+          <h3>Occupation</h3>
+          <h5>Character's occupation information.</h5>
+          <p><%= @character.char_occupation %></p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

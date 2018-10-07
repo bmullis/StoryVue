@@ -60,13 +60,35 @@
     color: $color_white !important;
   }
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 767px) {
   .btn-round {
     height: 60px;
     width: 60px;
     i {
       font-size: 24px;
       padding-top: 11px;
+    }
+  }
+  form {
+    .btn-primary, .btn-secondary {
+      border-radius: 6px !important;
+      display: block;
+      margin-left: 0;
+      margin-bottom: 12px;
+      width: 100%;
+    }
+    .btn-secondary {
+      margin-left: 0 !important;
+      margin-top: 12px;
+    }
+    .btn-primary {
+      margin-bottom: 200px;
+    }
+  }
+  .story-panel {
+    .btn-md {
+      display: block;
+      margin-top: 8px;
     }
   }
 }

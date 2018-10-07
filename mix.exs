@@ -20,7 +20,7 @@ defmodule Storyvue.Mixfile do
   def application do
     [
       mod: {Storyvue, []},
-      extra_applications: [:logger]
+      extra_applications: [:logger, :timex]
     ]
   end
 
@@ -41,6 +41,7 @@ defmodule Storyvue.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:comeonin, "~> 1.0"},
       {:gettext, "~> 0.11"},
+      {:timex, "~> 3.1"},
       {:cowboy, "~> 1.0"}
     ]
   end

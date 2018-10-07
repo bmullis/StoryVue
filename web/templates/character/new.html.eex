@@ -49,7 +49,7 @@
 
         <div class="form-group form-group-lg">
           <label for="character_title">Education:</label>
-          <%= select f, :char_education, ["None": "None", "High School": "High School", "Associates Degree": "Associates Degree", "Bachelors Degree": "Bachelors College", "Masters Degree": "Masters Degree", "Phd": "Phd"], class: "form-control" %>
+          <%= select f, :char_education, ["None": "None", "High School": "High School", "Associates Degree": "Associates Degree", "Bachelors Degree": "Bachelors Degree", "Masters Degree": "Masters Degree", "Phd": "Phd"], class: "form-control" %>
           <%= error_tag f, :char_education %>
         </div>
 
