@@ -33,7 +33,7 @@
     <div class="col-md-8 col-md-offset-2 text-center">
       <div class="panel panel-default story-panel">
         <h3>Characters</h3>
-        <h5>These are the characters that appear in your story.</h5>
+        <h5>The characters that appear in your story.</h5>
         <%= for character <- @characters do %>
           <div class="media-small">
             <%= link to: story_character_path(@conn, :show, @story.id, character.id) do %>
