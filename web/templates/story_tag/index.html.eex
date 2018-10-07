@@ -14,18 +14,20 @@
 
 <main class="container">
   <div class="fixed-button header-button">
-    <%= link to: story_story_tag_path(@conn, :new, @story_id), class: "btn btn-secondary btn-round" do %>
+    <%= link to: story_story_tag_path(@conn, :new, @story_id), class: "btn btn-secondary btn-round", title: "Add a new tag" do %>
       <i class="material-icons">add</i>
     <% end %>
   </div>
 
   <div class="row character-grid">
-    <%= for tag <- @tags do %>
-      <div class="col-md-4">
-        <div href="#" class="panel panel-default panel-character" style="background-color: <%= tag.tag_color %>;">
-          <h3><%= tag.tag_title %></h3>
+    <div class="col-md-8 col-md-offset-2">
+      <%= for tag <- @tags do %>
+        <div class="badge" style="background-color: <%= tag.tag_color %>; font-size: 22px; margin-right: 20px; padding: 10px 35px;">
+          <%= tag.tag_title %>
+          <i class="material-icons">label</i>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+
   </div>
 </main>

@@ -14,7 +14,7 @@
 
 <main class="container">
   <div class="fixed-button header-button">
-    <%= link to: story_character_path(@conn, :new, @story_id), class: "btn btn-secondary btn-round" do %>
+    <%= link to: story_character_path(@conn, :new, @story_id), class: "btn btn-secondary btn-round", title: "Add a new character" do %>
       <i class="material-icons">add</i>
     <% end %>
   </div>

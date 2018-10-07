@@ -1,11 +1,13 @@
 defmodule Storyvue.Story do
   use Storyvue.Web, :model
+  alias Storyvue.Character
   alias Storyvue.StoryTag
 
   schema "stories" do
     field :title, :string
     field :description, :string
     field :user_id, :integer
+    has_many :characters, Character
     has_many :story_tags, StoryTag
 
     timestamps()

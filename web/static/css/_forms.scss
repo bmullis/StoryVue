@@ -1,12 +1,12 @@
-input.form-control, textarea.form-control {
+input.form-control, textarea.form-control, select.form-control {
   background-color: $color_white;
   box-shadow: 0 0 18px rgba(0,0,0,0.12);
-  border-radius: 0 !important;
+  border-radius: 6px !important;
   font-weight: 400;
+  font-size: 16px !important;
   transition: all .2s ease-in-out;
   &:focus {
-    background-color: $color_black;
-    color: $color_white;
+    border: 1px solid $color_red;
   }
 }
 textarea {

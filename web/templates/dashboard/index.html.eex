@@ -12,14 +12,14 @@
 
 <main class="container">
   <div class="fixed-button header-button">
-    <%= link to: account_path(@conn, :index), class: "btn btn-secondary btn-round" do %>
+    <%= link to: account_path(@conn, :index), class: "btn btn-secondary btn-round", title: "Manage account" do %>
       <i class="material-icons">person</i>
     <% end %>
   </div>
 
 <main class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 col-md-offset-2">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="text-center">Stories</h4>
@@ -33,7 +33,21 @@
           <% end %>
         </div>
       </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="text-center">Activity</h4>
+        </div>
+        <div class="panel-body">
 
+        </div>
+        <div class="panel-footer">
+          <%= link to: story_path(@conn, :index), class: "btn btn-lg btn-secondary" do %>
+            View Your Activity <i class="material-icons">arrow_right</i>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </main>

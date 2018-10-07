@@ -4,33 +4,44 @@
 }
 .header-button {
   margin-top: -35px;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+}
+.btn {
+  border-width: 2px;
+  outline: none !important;
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.22);
+    transition: all .2s;
+  }
 }
 .btn-primary {
   background-color: $color_warning;
   border-color: $color_warning;
-  border-radius: 3px;
-  &:hover, &:focus {
-    background-color: $color_warning - #222;
-    border-color: $color_warning - #222;
+  border-radius: 6px;
+  margin-left: 6px;
+  &:hover, &:focus, &:active, &:active:focus {
+    background-color: $color-warning - #111;
+    border-color: $color_warning - #111;
   }
 }
 .btn-secondary {
   background-color: $color_green;
   border-color: $color_green;
-  border-radius: 3px;
-  &:hover, &:focus {
-    background-color: $color_green - #222;
-    border-color: $color_green - #222;
+  border-radius: 6px;
+  &:hover, &:focus, &:active {
+    background-color: $color_green - #111;
+    border-color: $color_green - #111;
   }
 }
 .btn-danger {
   background-color: $color_warning;
   border-color: $color_warning;
-  &:hover, &:focus {
-    background-color: $color_warning - #222;
-    border-color: $color_warning - #222;
+  &:hover, &:focus, &:active, &:active:focus {
+    background-color: $color_warning - #111 !important;
   }
+}
+.btn-lg {
+  padding: 10px 30px;
 }
 .btn-round {
   border-radius: 500px !important;
@@ -41,6 +52,12 @@
     font-size: 26px;
     padding-top: 15px;
     text-align: center;
+  }
+}
+.btn-secondary.btn-round {
+  &:hover {
+    background-color: $color_green - #111;
+    color: $color_white !important;
   }
 }
 @media screen and (max-width: 760px) {

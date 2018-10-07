@@ -14,7 +14,7 @@ defmodule Storyvue.SessionController do
         |> redirect(to: "/dashboard")
       :error ->
         conn
-        |> put_flash(:info, "You supplied an incorrect email or password")
+        |> put_flash(:error, "You supplied an incorrect email or password")
         |> render("new.html")
     end
   end
