@@ -20,10 +20,10 @@
     <% end %>
   </div>
 
-  <div class="row story-grid equal">
+  <div class="row">
     <%= for story <- @stories do %>
       <div class="col-md-4">
-        <div href="#" class="panel panel-default">
+        <div href="#" class="panel panel-default panel-truncate">
           <div class="panel-heading">
             <h4 class="text-center"><%= story.title %></h4>
             <button type="button" class="kebab" data-toggle="panel-heading-menu">

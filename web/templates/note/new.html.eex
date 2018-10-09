@@ -1,0 +1,44 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center">Add a New Note</h1>
+  </div>
+</div>
+
+<div class="bread-crumbs">
+  <div class="container">
+    <%= link to: story_note_path(@conn, :index, @story_id) do %>
+      <i class="material-icons md-18">arrow_back_ios</i> Back to Notes
+    <% end %>
+  </div>
+</div>
+
+<main class="container">
+  <div class="fixed-button header-button">
+    <div style="height: 70px;">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @changeset, story_note_path(@conn, :create, @story_id), fn f -> %>
+        <div class="form-group form-group-lg">
+          <label for="story_title">New Note:</label>
+          <%= textarea f, :content, placeholder: "Your note content goes here. Write your heart out!", class: "form-control", id: "markdown" %>
+          <%= error_tag f, :content %>
+        </div>
+
+        <%= hidden_input f, :story_id, value: @story_id %>
+
+        <div class="form-group form-group-lg">
+          <%= submit class: "btn btn-lg btn-secondary" do %>
+            Create Note
+          <% end %>
+          <%= link "Cancel", to: story_note_path(@conn, :index, @story_id), class: "btn btn-lg btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,39 @@
+.container-fluid {
+  padding: 0;
+}
+.sidebar {
+  background-color: $color_black;
+  border-radius: 0;
+  height: 74.2vh;
+  margin-top: -67px;
+  padding: 60px 20px 30px 20px;
+  position: relative;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      a {
+        border-left: 3px solid $color_black + #111;
+        color: $color_white;
+        display: block;
+        padding: 15px 30px;
+        &:hover {
+          background-color: $color_black + #111;
+        }
+      }
+      a.active-sidebar-nav {
+        border-left: 3px solid $color_green;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container-fluid {
+    padding: 0 15px;
+  }
+  .sidebar {
+    display: none;
+  }
+}

@@ -1,0 +1,50 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center">Story Notes</h1>
+  </div>
+</div>
+
+<div class="bread-crumbs">
+  <div class="container">
+    <%= link to: story_path(@conn, :show, @story_id) do %>
+      <i class="material-icons md-18">arrow_back_ios</i> Back to Story
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="fixed-button header-button">
+    <%= link to: story_note_path(@conn, :new, @story_id), class: "btn btn-secondary btn-round", title: "Add a new note" do %>
+      <i class="material-icons">add</i>
+    <% end %>
+  </div>
+</div>
+
+<div class="container-fluid the-content">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="sidebar">
+        <ul>
+          <li>
+            <%= link "Story", to: story_path(@conn, :show, @story_id) %>
+            <%= link "Characters", to: story_character_path(@conn, :index, @story_id) %>
+            <a href="#">Timeline</a>
+            <a href="#">Sections</a>
+            <a href="#">Moments</a>
+            <%= link "Notes", to: story_note_path(@conn, :index, @story_id), class: "active-sidebar-nav" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <%= for note <- @notes do %>
+        <div class="panel panel-default note-panel col-md-char">
+          <div class="markdown-text">
+            <%= note.content %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</main>
