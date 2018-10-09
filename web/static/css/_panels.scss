@@ -4,6 +4,7 @@
   border-radius: 6px;
   box-shadow: 0 0 30px rgba(0,12,45,0.15);
   margin-bottom: 30px;
+  position: relative;
   .panel-heading, .panel-body, .panel-footer {
     background-color: $color_white;
     border: none;
@@ -28,7 +29,7 @@
       border: none;
       color: $color_green;
       position: absolute;
-      right: 30px;
+      right: 10px;
       top: 27px;
       &:hover {
         i {
@@ -45,7 +46,7 @@
       top: 72px;
       padding: 0 0 5px 0;
       position: absolute;
-      right: 15px;
+      right: 0;
       text-align: left;
       ul {
         margin: 0;
@@ -115,7 +116,7 @@
     }
   }
 }
-.story-panel, .character-panel {
+.story-panel, .character-panel, .note-panel {
   padding: 30px;
   margin-bottom: 30px;
   h3:first-of-type {
@@ -143,6 +144,13 @@
     padding: 8px 0 8px 20px;
     margin-top: 15px;
     text-align: left;
+  }
+}
+.note-panel {
+  h1, h2, h3, h4, h5 {
+    font-weight: bold;
+    margin-top: 0;
+    padding: 0;
   }
 }
 .media-small {

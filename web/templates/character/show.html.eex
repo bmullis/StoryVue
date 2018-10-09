@@ -18,9 +18,25 @@
       <i class="material-icons">edit</i>
     <% end %>
   </div>
+</div>
 
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-2">
+      <div class="sidebar">
+        <ul>
+          <li>
+            <%= link "Story", to: story_path(@conn, :show, @story_id) %>
+            <%= link "Characters", to: story_character_path(@conn, :index, @story_id), class: "active-sidebar-nav" %>
+            <a href="#">Timeline</a>
+            <a href="#">Sections</a>
+            <a href="#">Moments</a>
+            <%= link "Notes", to: story_note_path(@conn, :index, @story_id) %>           
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
       <div class="panel panel-default character-panel">
         <%= if @character.char_image do %>
           <div class="character-image" style="background-image:url('<%= @character.char_image %>');"></div>
@@ -38,7 +54,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="panel panel-default character-panel">
         <%= if @character.char_education do %>
           <h3>Education</h3>

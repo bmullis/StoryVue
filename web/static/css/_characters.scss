@@ -15,3 +15,17 @@
   height: 270px;
   width: 270px;
 }
+.col-md-char {
+  display: inline-flex;
+  float: left;
+  margin-left: 30px;
+  position: relative;
+  width: 26.5%;
+}
+
+@media screen and (max-width: 767px) {
+  .col-md-char {
+    margin-left: 0;
+    width: 100% !important;
+  }
+}

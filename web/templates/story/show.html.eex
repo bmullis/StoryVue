@@ -18,19 +18,31 @@
       <i class="material-icons">edit</i>
     <% end %>
   </div>
+</div>
 
+<div class="container-fluid the-content">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2 text-center">
+    <div class="col-md-2">
+      <div class="sidebar">
+        <ul>
+          <li>
+            <%= link "Story", to: story_path(@conn, :show, @story.id), class: "active-sidebar-nav" %>
+            <%= link "Characters", to: story_character_path(@conn, :index, @story.id) %>
+            <a href="#">Timeline</a>
+            <a href="#">Sections</a>
+            <a href="#">Moments</a>
+            <%= link "Notes", to: story_note_path(@conn, :index, @story.id) %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 col-md-offset-2">
       <div class="panel panel-default story-panel">
         <h3>Description</h3>
         <h5>This is the short description of your story.</h5>
         <p><%= @story.description %></p>
       </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2 text-center">
       <div class="panel panel-default story-panel">
         <h3>Characters</h3>
         <h5>The characters that appear in your story.</h5>
@@ -48,17 +60,14 @@
         <br />
         <%= link "View All", to: story_character_path(@conn, :index, @story.id), class: "btn btn-secondary btn-md" %>
       </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2 text-center">
-      <div class="panel panel-default story-panel">
-        <h3>Timeline</h3>
-        <div class="timeline">
-          Create Moments
+        <div class="panel panel-default story-panel">
+          <h3>Timeline</h3>
+          <div class="timeline">
+            Create Moments
+          </div>
         </div>
+
       </div>
     </div>
   </div>
-</div>

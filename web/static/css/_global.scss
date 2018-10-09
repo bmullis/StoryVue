@@ -4,6 +4,7 @@ body {
   font-family: $font_family;
   font-size: 16px;
   font-weight: 400;
+  overflow-x: hidden;
   a {
     color: $color_red;
     &:hover, &:focus, &:active, :active:focus {

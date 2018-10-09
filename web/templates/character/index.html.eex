@@ -18,50 +18,68 @@
       <i class="material-icons">add</i>
     <% end %>
   </div>
+</main>
 
+<div class="container-fluid the-content">
   <div class="row character-grid">
-    <%= for character <- @characters do %>
-      <div class="col-md-4">
-        <div href="#" class="panel panel-default panel-character">
-          <div class="panel-heading">
-            <h4 class="text-center"><%= character.char_name %></h4>
-            <button type="button" class="kebab" data-toggle="panel-heading-menu">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <div class="panel-heading-menu hidden">
-              <ul>
-                <li>
-                  <%= link to: story_character_char_tag_path(@conn, :index, @story_id, character.id) do %>
-                    <i class="material-icons md-18">label</i> &nbsp;Tags
-                  <% end %>
-                  <%= link to: story_character_path(@conn, :edit, @story_id, character.id ) do %>
-                    <i class="material-icons md-18">settings</i> &nbsp;Settings
-                  <% end %>
-                  </a>
-                </li>
-              </ul>
+    <div class="col-md-2">
+      <div class="sidebar">
+        <ul>
+          <li>
+            <%= link "Story", to: story_path(@conn, :show, @story_id) %>
+            <%= link "Characters", to: story_character_path(@conn, :index, @story_id), class: "active-sidebar-nav" %>
+            <a href="#">Timeline</a>
+            <a href="#">Sections</a>
+            <a href="#">Moments</a>
+            <%= link "Notes", to: story_note_path(@conn, :index, @story_id) %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <%= for character <- @characters do %>
+        <div class="col-md-char">
+          <div href="#" class="panel panel-default panel-character panel-truncate">
+            <div class="panel-heading">
+              <h4 class="text-center"><%= character.char_name %></h4>
+              <button type="button" class="kebab" data-toggle="panel-heading-menu">
+                <i class="material-icons">more_vert</i>
+              </button>
+              <div class="panel-heading-menu hidden">
+                <ul>
+                  <li>
+                    <%= link to: story_character_char_tag_path(@conn, :index, @story_id, character.id) do %>
+                      <i class="material-icons md-18">label</i> &nbsp;Tags
+                    <% end %>
+                    <%= link to: story_character_path(@conn, :edit, @story_id, character.id ) do %>
+                      <i class="material-icons md-18">settings</i> &nbsp;Settings
+                    <% end %>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="panel-body">
-            <%= if character.char_image do %>
-              <div class="panel-body-image" style="background-image:url('<%= character.char_image %>');"></div>
-            <% else %>
-              <div class="panel-body-image" style="background-image:url('/images/user-image2.jpg');"></div>
-            <% end %>
-            <p><%= character.char_description %></p>
-            <div class="panel-body-badges">
-              <%= for char_tag <- character.char_tags do %>
-                <span class="badge" style="background-color: <%= char_tag.tag_color %>;"><%= char_tag.tag_title %></span>
+            <div class="panel-body">
+              <%= if character.char_image do %>
+                <div class="panel-body-image" style="background-image:url('<%= character.char_image %>');"></div>
+              <% else %>
+                <div class="panel-body-image" style="background-image:url('/images/user-image2.jpg');"></div>
+              <% end %>
+              <p><%= character.char_description %></p>
+              <div class="panel-body-badges">
+                <%= for char_tag <- character.char_tags do %>
+                  <span class="badge" style="background-color: <%= char_tag.tag_color %>;"><%= char_tag.tag_title %></span>
+                <% end %>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <%= link to: story_character_path(@conn, :show, @story_id, character.id), class: "btn btn-lg btn-secondary" do %>
+                View Character <i class="material-icons">arrow_right</i>
               <% end %>
             </div>
           </div>
-          <div class="panel-footer">
-            <%= link to: story_character_path(@conn, :show, @story_id, character.id), class: "btn btn-lg btn-secondary" do %>
-              View Character <i class="material-icons">arrow_right</i>
-            <% end %>
-          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</main>
+</div>

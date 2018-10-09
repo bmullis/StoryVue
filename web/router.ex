@@ -25,6 +25,7 @@ defmodule Storyvue.Router do
         resources "/tags", CharTagController, only: [:index, :new, :create, :edit, :update, :delete]
       end
       resources "/tags", StoryTagController, only: [:index, :new, :create, :edit, :update, :delete]
+      resources "/notes", NoteController, only: [:index, :new, :create]
     end
 
     get "/login",  SessionController, :new

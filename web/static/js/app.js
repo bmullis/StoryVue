@@ -18,6 +18,11 @@ $(document).ready(function() {
     $('.alert').slideUp();
   }, 2000);
 
+  if ($('.sidebar')) {
+    let sectionHeight = $('.the-content').height();
+    $('.sidebar').height(sectionHeight);
+  }
+
   $('.panel-heading .kebab').on('click', function() {
     $(this).siblings('.panel-heading-menu').toggleClass('hidden');
   });
@@ -46,6 +51,31 @@ $(document).ready(function() {
       $(this).css('color', textColor);
     });
   }
+
+  $('.panel-truncate p').each(function() {
+    if ( $(this).html().length > 110 ) {
+      let truncText = $(this).html().substring(0,110) + '...';
+      $(this).html(truncText);
+    }
+  });
+
+  $('.markdown-text').each(function() {
+    if ( $(this).html().length > 300 ) {
+      let truncText = $(this).html().substring(0,300) + '...';
+      $(this).html(truncText);
+    }
+  });
+
+  if ( $('#markdown') ) {
+    var simplemde = new SimpleMDE({ element: document.getElementById("markdown") });
+  }
+
+  $('.markdown-text').each(function() {
+    var text = $(this).html();
+    var converter = new showdown.Converter({headerLevelStart: 3});
+    var html = converter.makeHtml(text);
+    $(this).html(html);
+  });
 })
 
 // Import local files
