@@ -12,3 +12,20 @@ input.form-control, textarea.form-control, select.form-control {
 textarea {
   height: 150px !important;
 }
+
+.form-group .btn-secondary, .form-group .btn-primary {
+  margin-top: 60px;
+}
+
+.navbar-default .form-group .btn-secondary {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .form-group .btn-secondary {
+    margin-top: 60px;
+  }
+  .form-group .btn-primary {
+    margin-top: 0;
+  }
+}

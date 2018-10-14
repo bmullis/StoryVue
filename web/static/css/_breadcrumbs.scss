@@ -1,8 +1,9 @@
 .bread-crumbs {
-  background-color: $color_dark_gray;
+  background-color: $color_gray - #090909;
   padding: 0.75em;
+  z-index: 2;
   a {
-    color: $color_white;
+    color: $color_black;
     &:hover, &:focus, &:active, &:active:focus {
       color: $color_white - #222;
     }

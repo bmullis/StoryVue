@@ -1,11 +1,11 @@
 <div class="jumbotron">
-  <div class="container">
+  <div class="container-fluid">
     <h1 class="text-center">Your Stories</h1>
   </div>
 </div>
 
 <div class="bread-crumbs">
-  <div class="container">
+  <div class="container-fluid">
     <%= link to: dashboard_path(@conn, :index) do %>
       <i class="material-icons md-18">arrow_back_ios</i> Back to Dashboard
     <% end %>
@@ -13,13 +13,15 @@
 
 </div>
 
-<main class="container">
+<div class="container-fluid">
   <div class="fixed-button header-button">
     <%= link to: story_path(@conn, :new), class: "btn btn-secondary btn-round", title: "Create a new story" do %>
       <i class="material-icons">add</i>
     <% end %>
   </div>
+</div>
 
+<div class="container the-content" style="padding-bottom: 170px;">
   <div class="row">
     <%= for story <- @stories do %>
       <div class="col-md-4">
@@ -60,4 +62,4 @@
       </div>
     <% end %>
   </div>
-</main>
+</div>

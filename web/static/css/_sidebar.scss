@@ -1,13 +1,11 @@
-.container-fluid {
-  padding: 0;
-}
 .sidebar {
-  background-color: $color_black;
+  background-color: $color_white;
   border-radius: 0;
   height: 74.2vh;
   margin-top: -67px;
-  padding: 60px 20px 30px 20px;
+  padding: 60px 30px 30px 40px;
   position: relative;
+  z-index: 0;
   ul {
     margin: 0;
     padding: 0;
@@ -15,11 +13,11 @@
       list-style: none;
       a {
         border-left: 3px solid $color_black + #111;
-        color: $color_white;
+        color: $color_black;
         display: block;
         padding: 15px 30px;
         &:hover {
-          background-color: $color_black + #111;
+          background-color: $color_gray - #111;
         }
       }
       a.active-sidebar-nav {

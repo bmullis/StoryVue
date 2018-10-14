@@ -1,6 +1,7 @@
 defmodule Storyvue.StoryController do
   use Storyvue.Web, :controller
   alias Storyvue.Story
+  alias Storyvue.CharTag
   alias Storyvue.StoryTag
 
   def index(conn, _params) do
@@ -31,13 +32,9 @@ defmodule Storyvue.StoryController do
   end
 
   def show(conn, %{"id" => story_id}) do
-    story = Repo.get(Story, story_id)
-    character_query = from c in Storyvue.Character,
-      where: c.story_id == ^story_id,
-      preload: [:char_tags]
-    characters = Repo.all(character_query)
+    story = Repo.get(Story, story_id) |> Repo.preload([:sections, [{:characters, :char_tags}]])
 
-    render conn, "show.html", story: story, characters: characters
+    render conn, "show.html", story: story
   end
 
   def edit(conn, %{"id" => story_id}) do
