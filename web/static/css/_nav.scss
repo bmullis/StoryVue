@@ -1,16 +1,18 @@
 .navbar-default {
-  background-color: $color_black;
+  background-color: $color_white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
   border: none;
   border-radius: 0;
   .navbar-toggle {
     border: none;
+    border-radius: 0;
     margin-top: 12px;
     padding: 0;
     &:hover, &:active, &:focus {
       background-color: transparent;
     }
     .icon-bar {
-      background-color: $color_white;
+      background-color: $color_black;
       height: 3px;
       margin-bottom: 5px;
       width: 27px;
@@ -20,7 +22,7 @@
     margin-left: 40px;
     li {
       a {
-        color: $color_white;
+        color: $color_black;
         font-size: 16px;
         font-weight: 400;
         transition: all .2s;
@@ -31,12 +33,12 @@
     }
   }
   .dropdown-menu {
-    background-color: $color_black;
+    background-color: $color_white;
     li {
       a {
         padding: 12px 20px;
         &:hover {
-          background-color: $color_black + #111;
+          background-color: $color_gray;
         }
       }
     }
@@ -50,9 +52,10 @@
     }
   }
   .form-control {
-    background-color: $color_black + #111;
+    background-color: $color_white - #111;
     border-radius: 6px 0 0 6px !important;
-    border: 1px solid $color_black + #111;
+    border: 1px solid $color_white - #111;
+    box-shadow: none;
     color: $color_white;
     font-size: 16px;
     font-weight: 300;
@@ -72,12 +75,12 @@
   }
 }
 .navbar-header {
-  padding: 5.5px 0 0 0 !important;
+  padding: 2.5px 0 0 0 !important;
 }
 .navbar-default .navbar-brand {
   color: $color_white;
   img {
-    width: 160px;
+    width: 120px;
   }
   &:hover {
     color: $color_white - #111;
@@ -107,7 +110,7 @@
       margin-left: 0px;
       .open {
         .dropdown-menu>li>a {
-          color: $color_white;
+          color: $color_black;
         }
       }
     }

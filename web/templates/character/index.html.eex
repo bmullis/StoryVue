@@ -1,18 +1,18 @@
 <div class="jumbotron">
-  <div class="container">
+  <div class="container-fluid">
     <h1 class="text-center">Characters</h1>
   </div>
 </div>
 
 <div class="bread-crumbs">
-  <div class="container">
+  <div class="container-fluid">
     <%= link to: story_path(@conn, :show, @story_id) do %>
       <i class="material-icons md-18">arrow_back_ios</i> Back to Story
     <% end %>
   </div>
 </div>
 
-<main class="container">
+<main class="container-fluid">
   <div class="fixed-button header-button">
     <%= link to: story_character_path(@conn, :new, @story_id), class: "btn btn-secondary btn-round", title: "Add a new character" do %>
       <i class="material-icons">add</i>
@@ -20,7 +20,7 @@
   </div>
 </main>
 
-<div class="container-fluid the-content">
+<div class="container-fluid the-content with-sidebar">
   <div class="row character-grid">
     <div class="col-md-2">
       <div class="sidebar">

@@ -19,7 +19,7 @@ $(document).ready(function() {
   }, 2000);
 
   if ($('.sidebar')) {
-    let sectionHeight = $('.the-content').height();
+    let sectionHeight = $('.the-content').height() + 100;
     $('.sidebar').height(sectionHeight);
   }
 

@@ -1,0 +1,51 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center">Add a New Section</h1>
+  </div>
+</div>
+
+<div class="bread-crumbs">
+  <div class="container">
+    <%= link to: story_path(@conn, :show, @story_id) do %>
+      <i class="material-icons md-18">arrow_back_ios</i> Back to Story
+    <% end %>
+  </div>
+</div>
+
+<main class="container">
+  <div class="fixed-button header-button">
+    <div style="height: 70px;">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @changeset, story_section_path(@conn, :create, @story_id), fn f -> %>
+
+        <div class="form-group form-group-lg">
+          <label for="story_title">Title:</label>
+          <%= text_input f, :title, placeholder: "Give your section a title", class: "form-control" %>
+          <%= error_tag f, :title %>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="story_title">New Section:</label>
+          <%= textarea f, :description, placeholder: "Your section description goes here.", class: "form-control", id: "markdown" %>
+          <%= error_tag f, :description %>
+        </div>
+
+        <%= hidden_input f, :story_id, value: @story_id %>
+
+        <div class="form-group form-group-lg">
+          <%= submit class: "btn btn-lg btn-secondary" do %>
+            Create Note
+          <% end %>
+          <%= link "Cancel", to: story_path(@conn, :show, @story_id), class: "btn btn-lg btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

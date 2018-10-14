@@ -1,23 +1,23 @@
 <div class="jumbotron">
-  <div class="container">
+  <div class="container-fluid">
       <h1 class="text-center">Welcome, <%= current_user(@conn).first_name %>!</h1>
   </div>
 </div>
 
 <div class="bread-crumbs">
-  <div class="container">
+  <div class="container-fluid">
       <i class="material-icons md-18"></i> &nbsp;
   </div>
 </div>
 
-<main class="container">
+<main class="container-fluid">
   <div class="fixed-button header-button">
     <%= link to: account_path(@conn, :index), class: "btn btn-secondary btn-round", title: "Manage account" do %>
       <i class="material-icons">person</i>
     <% end %>
   </div>
 
-<main class="container">
+<main class="container" style="padding-bottom: 170px;">
   <div class="row">
     <div class="col-md-4 col-md-offset-2">
       <div class="panel panel-default">

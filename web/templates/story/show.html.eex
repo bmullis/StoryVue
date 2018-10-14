@@ -1,18 +1,18 @@
 <div class="jumbotron">
-  <div class="container">
+  <div class="container-fluid">
     <h1 class="text-center"><%= @story.title %></h1>
   </div>
 </div>
 
 <div class="bread-crumbs">
-  <div class="container">
+  <div class="container-fluid">
     <%= link to: story_path(@conn, :index) do %>
       <i class="material-icons md-18">arrow_back_ios</i> Back to Stories
     <% end %>
   </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
   <div class="fixed-button header-button">
     <%= link to: story_path(@conn, :edit, @story.id), class: "btn btn-secondary btn-round", title: "Edit this story"  do %>
       <i class="material-icons">edit</i>
@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<div class="container-fluid the-content">
+<div class="container-fluid with-sidebar">
   <div class="row">
     <div class="col-md-2">
       <div class="sidebar">
@@ -36,38 +36,55 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-4 col-md-offset-2">
-      <div class="panel panel-default story-panel">
-        <h3>Description</h3>
-        <h5>This is the short description of your story.</h5>
-        <p><%= @story.description %></p>
-      </div>
 
+    <div class="col-md-9">
       <div class="panel panel-default story-panel">
-        <h3>Characters</h3>
-        <h5>The characters that appear in your story.</h5>
-        <%= for character <- @characters do %>
-          <div class="media-small">
-            <%= link to: story_character_path(@conn, :show, @story.id, character.id) do %>
-              <%= if character.char_image do %>
-                <div data-toggle="tooltip" title="<%= character.char_name %>" class="media-small-img" style="background-image:url('<%= character.char_image %>');"></div>
-              <% else %>
-                <div data-toggle="tooltip" title="<%= character.char_name %>" class="media-small-img" style="background-image:url('/images/user-image2.jpg');"></div>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-        <br />
-        <%= link "View All", to: story_character_path(@conn, :index, @story.id), class: "btn btn-secondary btn-md" %>
+        <h3>Theme</h3>
+        <h5>These are your theme and mood panels.</h5>
+        
       </div>
-
-        <div class="panel panel-default story-panel">
-          <h3>Timeline</h3>
-          <div class="timeline">
-            Create Moments
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default story-panel">
+            <h3>Description</h3>
+            <h5>This is the short description of your story.</h5>
+            <p><%= @story.description %></p>
           </div>
         </div>
-
+        <div class="col-md-4">
+          <div class="panel panel-default story-panel">
+            <h3>Characters</h3>
+            <h5>The characters that appear in your story.</h5>
+            <%= for character <- @story.characters do %>
+              <div class="media-small">
+                <%= link to: story_character_path(@conn, :show, @story.id, character.id) do %>
+                  <%= if character.char_image do %>
+                    <div data-toggle="tooltip" title="<%= character.char_name %>" class="media-small-img" style="background-image:url('<%= character.char_image %>');"></div>
+                  <% else %>
+                    <div data-toggle="tooltip" title="<%= character.char_name %>" class="media-small-img" style="background-image:url('/images/user-image2.jpg');"></div>
+                  <% end %>
+                <% end %>
+              </div>
+            <% end %>
+            <br />
+            <%= link "View All", to: story_character_path(@conn, :index, @story.id), class: "btn btn-secondary btn-md" %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default story-panel">
+            <h3>Timeline</h3>
+            <div class="timeline">
+              <%= for section <- @story.sections do %>
+                <div class="panel panel-default story-panel">
+                  <h4><%= section.title %></h4>
+                </div>
+              <% end %>
+              <%= link "Create a Section", to: story_section_path(@conn, :new, @story.id), class: "btn btn-secondary btn-md" %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
+</div>
